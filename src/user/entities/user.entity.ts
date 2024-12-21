@@ -23,6 +23,9 @@ export class UserEntity {
     @Column({name: 'type_user', nullable: false})
     typeUser: number;
 
+    @Column({name: 'address', nullable: false})
+    address: string;
+
     @CreateDateColumn({name: 'created_at'})
     createdAt: Date;
 

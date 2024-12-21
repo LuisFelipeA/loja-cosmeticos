@@ -25,4 +25,7 @@ export class UpdateUserDTO {
 
     @IsOptional()
     typeUser?: number;
+
+    @IsOptional()
+    address?: string;
 }

@@ -22,4 +22,8 @@ export class CreateUserDTO {
     @IsString()
     @IsNotEmpty()
     password: string;
+
+    @IsString()
+    @IsNotEmpty()
+    address: string;
 }
