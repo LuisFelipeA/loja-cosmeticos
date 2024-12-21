@@ -19,7 +19,7 @@ export class ProductService {
         const productList = await this.productRepository.find(); 
         
         if (!productList || productList.length === 0) {
-            throw new HttpException('Users not found', HttpStatus.NOT_FOUND); 
+            throw new HttpException('Product not found', HttpStatus.NOT_FOUND); 
         }
 
         return productList;
