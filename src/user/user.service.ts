@@ -56,6 +56,11 @@ export class UserService {
         return user;
     }
 
+    // busca pelo nome
+    async findByName(username: string): Promise<UserEntity | undefined> {
+        return this.userRepository.findOne({ where: { name: username } });
+    }
+
     // atualiza usuario
     async update(idUser: string, updateUserDto: UpdateUserDTO): Promise<UserEntity> {
         const user = await this.findById(idUser); // busca usuario
