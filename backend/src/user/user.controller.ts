@@ -3,6 +3,7 @@ import { CreateUserDTO } from './dtos/createUser.dto';
 import { UserEntity } from './entities/user.entity';
 import { UserService } from './user.service';
 import { UpdateUserDTO } from './dtos/updateUser.dto';
+import { Public } from 'src/auth/decorators/public.decorator';
 
 @Controller('user')
 export class UserController {
@@ -10,6 +11,7 @@ export class UserController {
     constructor(private readonly userService: UserService) {} // inicia service
 
     @Post()
+    @Public()
     create(@Body() createUserDto: CreateUserDTO): Promise<UserEntity> {
         return this.userService.create(createUserDto);        
     }
